@@ -1,0 +1,14 @@
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+    <field name="name">
+        <field-validator type="requiredstring">
+            <message>Name is a required field.</message>
+        </field-validator>
+    </field>
+    <field name="file">
+        <field-validator type="required">
+            <message>File to Upload is a required field.</message>
+        </field-validator>
+    </field>
+</validators>
