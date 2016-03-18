@@ -119,6 +119,10 @@
         </action>
 
         <!-- Add additional actions here -->
+
+        <action name="newView">
+            <result>/WEB-INF/pages/admin/newView.jsp</result>
+        </action>
     </package>
 
     <!-- Actions in this package will be prefixed with /admin/ -->
