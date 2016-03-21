@@ -10,10 +10,10 @@
     <http pattern="/scripts/**" security="none"/>
     <http pattern="/assets/**" security="none"/>
     <http pattern="/VAADIN**" security="none"/>
-    <http pattern="/myui**" security="none"/>
 
     <http auto-config="true">
         <intercept-url pattern="/admin/**" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/myui/**" access="ROLE_ADMIN"/>
         <intercept-url pattern="/passwordHint*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
         <intercept-url pattern="/signup*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
         <intercept-url pattern="/saveSignup*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
