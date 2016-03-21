@@ -9,7 +9,11 @@ import javax.servlet.http.HttpServletResponse;
 
 public class VaadinTag extends ComponentTagSupport {
 
-    private String className;
+    private String url;
+
+    private String theme;
+
+    private String widgetset;
 
     @Override
     public Component getBean(ValueStack valueStack, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
@@ -21,11 +25,21 @@ public class VaadinTag extends ComponentTagSupport {
         super.populateParams();
 
         VaadinComponent component = (VaadinComponent) getComponent();
-        component.setClassName(className);
+        component.setUrl(url.startsWith("/") ? url : "/" + url);
+        component.setTheme(theme);
+        component.setWidgetset(widgetset);
     }
 
-    public void setClassName(String className) {
-        this.className = className;
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public void setTheme(String theme) {
+        this.theme = theme;
+    }
+
+    public void setWidgetset(String widgetset) {
+        this.widgetset = widgetset;
     }
 
 }

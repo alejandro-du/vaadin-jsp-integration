@@ -13,16 +13,22 @@
         <body-content>JSP</body-content>
         <description>Renders a Vaadin UI</description>
         <attribute>
-            <name>id</name>
-            <required>false</required>
-            <rtexprvalue>false</rtexprvalue>
-            <description>id for referencing element</description>
-        </attribute>
-        <attribute>
-            <name>className</name>
+            <name>url</name>
             <required>true</required>
             <rtexprvalue>false</rtexprvalue>
-            <description>Full class name of the Vaadin UI to render</description>
+            <description>URL mapped to the Vaadin Servlet</description>
+        </attribute>
+        <attribute>
+            <name>theme</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <description>Vaadin theme name</description>
+        </attribute>
+        <attribute>
+            <name>widgetset</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <description>Widgetset name</description>
         </attribute>
     </tag>
 </taglib>

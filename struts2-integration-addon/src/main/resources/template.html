@@ -1,0 +1,39 @@
+<div id="${divId}" class="v-app ${theme}" style="height: 320px">
+    <div class="v-app-loading"></div>
+    <noscript>
+        You have to enable javascript in your browser to use an application built with Vaadin.
+    </noscript>
+</div>
+
+<script type="text/javascript" src="/VAADIN/vaadinBootstrap.js?v=${vaadinVersion}"></script>
+
+<script type="text/javascript">//<![CDATA[
+    vaadin.initApplication("${divId}", {
+        "theme": "${theme}",
+        "versionInfo": {
+            "vaadinVersion": "${vaadinVersion}"
+        },
+        "widgetset": "${widgetset}",
+        "comErrMsg": {
+            "caption": "Communication problem",
+            "message": "Take note of any unsaved data, and <u>click here</u> or press ESC to continue.",
+            "url": null
+        },
+        "authErrMsg": {
+            "caption": "Authentication problem",
+            "message": "Take note of any unsaved data, and <u>click here</u> or press ESC to continue.",
+            "url": null
+        },
+        "sessExpMsg": {
+            "caption": "Session Expired",
+            "message": "Take note of any unsaved data, and <u>click here</u> or press ESC key to continue.",
+            "url": null
+        },
+        "vaadinDir": "/VAADIN/",
+        "debug": true,
+        "standalone": false,
+        "heartbeatInterval": 300,
+        "browserDetailsUrl": "${browserDetailsUrl}",
+        "serviceUrl": "${serviceUrl}"
+    });
+//]]></script>

@@ -17,6 +17,7 @@
     <constant name="struts.mapper.alwaysSelectFullNamespace" value="false"/>
     <!-- Allow <s:submit> to call method names directly -->
     <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+    <constant name="struts.action.excludePattern" value="/VAADIN*,/myui*"/>
 
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">

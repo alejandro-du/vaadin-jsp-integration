@@ -8,6 +8,6 @@
 <body id="newView">
 
 <div class="col-sm-10">
-    <vaadin:ui className="com.example.webapp.vaadin.MyUI" />
+    <vaadin:ui url="/myui" theme="valo"/>
 </div>
 </body>
