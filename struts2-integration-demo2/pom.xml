@@ -14,6 +14,8 @@
 	<description>Struts 2 Starter</description>
 
     <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <struts2.version>2.3.24.1</struts2.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <vaadin.version>7.6.4</vaadin.version>
