@@ -6,7 +6,6 @@
     <artifactId>struts2-integration-root</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>Struts2 Integration Add-on Root Project</name>
 
     <modules>
         <module>struts2-integration-addon</module>
