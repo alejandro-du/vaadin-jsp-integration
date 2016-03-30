@@ -136,5 +136,15 @@
         <appfuse.version>3.5.0</appfuse.version>
         <vaadin.version>7.6.4</vaadin.version>
         <vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
+
+        <!-- Database configuration -->
+        <jdbc.artifactId>h2</jdbc.artifactId>
+        <jdbc.driverClassName>org.h2.Driver</jdbc.driverClassName>
+        <jdbc.groupId>com.h2database</jdbc.groupId>
+        <jdbc.password/>
+        <jdbc.url>jdbc:h2:/tmp/struts2_integration_demo;MULTI_THREADED=1</jdbc.url>
+        <jdbc.username>sa</jdbc.username>
+        <jdbc.validationQuery>SELECT 1 + 1</jdbc.validationQuery>
+        <jdbc.version>1.4.182</jdbc.version>
     </properties>
 </project>
