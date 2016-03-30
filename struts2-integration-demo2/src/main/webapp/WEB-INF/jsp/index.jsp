@@ -11,12 +11,14 @@
 	<s:head />
 </head>
 <body>
-    <vaadin:ui url="/myui" />
-
+    <h2>Struts2 form</h2>
 	<s:form action="helloWorld">
 		<s:textfield label="What is your name?" name="name" />
 		<s:textfield label="What is the date?" name="dateNow" />
 		<s:submit />
 	</s:form>
+
+	<h2>Vaadin UI</h2>
+    <vaadin:ui url="/myui" />
 </body>
 </html>

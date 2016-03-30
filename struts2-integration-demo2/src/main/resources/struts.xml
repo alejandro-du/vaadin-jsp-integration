@@ -6,6 +6,7 @@
 <struts>
 
     <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+
     <!-- Exclude URLs handled by Vaadin -->
     <constant name="struts.action.excludePattern" value="/VAADIN*,/myui*"/>
 

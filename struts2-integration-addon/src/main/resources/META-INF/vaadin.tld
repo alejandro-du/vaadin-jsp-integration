@@ -7,23 +7,27 @@
     <short-name>vaadin</short-name>
     <uri>/vaadin</uri>
     <display-name>"Vaadin Tags"</display-name>
+
     <tag>
         <name>ui</name>
         <tag-class>org.vaadin.struts2.VaadinTag</tag-class>
         <body-content>JSP</body-content>
         <description>Renders a Vaadin UI</description>
+
         <attribute>
             <name>url</name>
             <required>true</required>
             <rtexprvalue>false</rtexprvalue>
             <description>URL mapped to the Vaadin Servlet</description>
         </attribute>
+
         <attribute>
             <name>theme</name>
             <required>false</required>
             <rtexprvalue>false</rtexprvalue>
             <description>Vaadin theme name</description>
         </attribute>
+
         <attribute>
             <name>widgetset</name>
             <required>false</required>

@@ -11,7 +11,14 @@ import java.io.InputStream;
 import java.io.Writer;
 import java.util.Scanner;
 
+/**
+ * Struts2 Component implementation that renders the HTML required to visualize a Vaadin UI.
+ *
+ * @author Alejandro Duarte
+ */
 public class VaadinComponent extends Component {
+
+    public static final String TEMPLATE_FILE_NAME = "template.html";
 
     private String url;
 
@@ -37,7 +44,7 @@ public class VaadinComponent extends Component {
     }
 
     private String getTemplate() {
-        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("template.html");
+        final InputStream inputStream = getClass().getClassLoader().getResourceAsStream(TEMPLATE_FILE_NAME);
         Scanner scanner = new Scanner(inputStream);
         StringBuilder stringBuilder = new StringBuilder();
 

@@ -6,8 +6,6 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
-import java.time.LocalDateTime;
-
 public class MyUI extends UI {
 
     @Override
@@ -18,7 +16,7 @@ public class MyUI extends UI {
         setContent(layout);
 
         Button button = new Button("Click me");
-        button.addClickListener(e -> layout.addComponent(new Label("Thanks for clicking. Time: " + LocalDateTime.now())));
+        button.addClickListener(e -> layout.addComponent(new Label("Thanks for clicking!")));
         layout.addComponent(button);
     }
 

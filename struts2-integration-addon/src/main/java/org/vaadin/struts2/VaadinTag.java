@@ -7,6 +7,11 @@ import org.apache.struts2.views.jsp.ComponentTagSupport;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * JSTL tag for Vaadin UIs.
+ *
+ * @author Alejandro Duarte
+ */
 public class VaadinTag extends ComponentTagSupport {
 
     private String url;
