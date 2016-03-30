@@ -6,11 +6,12 @@
 <struts>
 
     <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+    <!-- Exclude URLs handled by Vaadin -->
     <constant name="struts.action.excludePattern" value="/VAADIN*,/myui*"/>
 
     <package name="myPackage" extends="struts-default">
 
-        <default-action-ref name="index" />
+        <default-action-ref name="index"/>
 
         <action name="index" class="com.example.IndexAction">
             <result>/WEB-INF/jsp/index.jsp</result>

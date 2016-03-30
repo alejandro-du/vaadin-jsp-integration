@@ -27,15 +27,6 @@
         </repository>
     </repositories>
 
-    <profiles>
-        <profile>
-            <id>h2</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-        </profile>
-    </profiles>
-
     <build>
         <plugins>
             <plugin>

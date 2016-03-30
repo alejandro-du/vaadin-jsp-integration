@@ -1,35 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-    <artifactId>struts2-integration-root</artifactId>
-    <groupId>org.vaadin</groupId>
-    <version>1.0-SNAPSHOT</version>
-  </parent>
+    <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
     <artifactId>struts2-integration-demo2</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <struts2.version>2.3.24.1</struts2.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <struts2.version>2.3.24.1</struts2.version>
         <vaadin.version>7.6.4</vaadin.version>
     </properties>
 
-	<dependencies>
-		<!-- Junit -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
-		</dependency>
-
-		<!--  Struts 2 -->
-		<dependency>
+    <dependencies>
+        <!--  Struts 2 -->
+        <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-core</artifactId>
             <version>${struts2.version}</version>
@@ -43,56 +29,24 @@
 
         <dependency>
             <groupId>org.apache.struts</groupId>
-            <artifactId>struts2-spring-plugin</artifactId>
-            <version>${struts2.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.struts</groupId>
             <artifactId>struts2-config-browser-plugin</artifactId>
             <version>${struts2.version}</version>
         </dependency>
 
-		<!-- Servlet & Jsp -->
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.4</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jsp-api</artifactId>
-			<version>2.0</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<!-- Jakarta Commons -->
-		<dependency>
-			<groupId>commons-fileupload</groupId>
-			<artifactId>commons-fileupload</artifactId>
-			<version>1.3</version>
-		</dependency>
-
+        <!-- Servlet & Jsp -->
         <dependency>
-            <groupId>commons-logging</groupId>
-            <artifactId>commons-logging</artifactId>
-            <version>1.1.3</version>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.4</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.0</version>
+            <scope>provided</scope>
         </dependency>
-
-		<!-- Dwr -->
-		<dependency>
-			<groupId>uk.ltd.getahead</groupId>
-			<artifactId>dwr</artifactId>
-			<version>1.1-beta-3</version>
-		</dependency>
 
         <!-- Vaadin -->
         <dependency>
@@ -100,65 +54,44 @@
             <artifactId>vaadin-server</artifactId>
             <version>${vaadin.version}</version>
         </dependency>
+
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-client-compiled</artifactId>
             <version>${vaadin.version}</version>
         </dependency>
+
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-themes</artifactId>
             <version>${vaadin.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.vaadin</groupId>
             <artifactId>struts2-integration</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
     </dependencies>
-	
+
     <build>
-      <finalName>struts2-archetype-starter</finalName>
-    	<plugins>
-    		<plugin>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                   <source>1.5</source>
-                   <target>1.5</target>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
-    		<plugin>
-                <groupId>org.mortbay.jetty</groupId>
+
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>8.1.7.v20120910</version>
-                <configuration>
-                    <stopKey>CTRL+C</stopKey>
-                    <stopPort>8999</stopPort>
-                    <systemProperties>
-                        <systemProperty>
-                            <name>log4j.configuration</name>
-                            <value>file:${basedir}/src/main/resources/log4j.properties</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>slf4j</name>
-                            <value>false</value>
-                        </systemProperty>
-                    </systemProperties>
-                    <scanIntervalSeconds>10</scanIntervalSeconds>
-                    <webAppSourceDirectory>${basedir}/src/main/webapp/</webAppSourceDirectory>
-                    <webAppConfig>
-                        <contextPath>/struts2-integration-demo2</contextPath>
-                        <descriptor>${basedir}/src/main/webapp/WEB-INF/web.xml</descriptor>
-                    </webAppConfig>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>log4j</groupId>
-                        <artifactId>log4j</artifactId>
-                        <version>1.2.17</version>
-                    </dependency>
-                </dependencies>
+                <version>9.3.8.v20160314</version>
             </plugin>
-    	</plugins>
+
+        </plugins>
     </build>
 </project>

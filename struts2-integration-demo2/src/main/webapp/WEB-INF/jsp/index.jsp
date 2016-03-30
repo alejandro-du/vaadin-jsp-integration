@@ -12,6 +12,7 @@
 </head>
 <body>
     <vaadin:ui url="/myui" />
+
 	<s:form action="helloWorld">
 		<s:textfield label="What is your name?" name="name" />
 		<s:textfield label="What is the date?" name="dateNow" />
