@@ -6,34 +6,29 @@ import com.vaadin.ui.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class MyUI extends UI {
+public class MyUI extends UI implements Button.ClickListener {
+
+    private VerticalLayout layout = new VerticalLayout();
+    private TextField textField = new TextField("Enter name: ");
+    private Button button = new Button("Call Server");
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
-        initLayout();
-    }
-
-    public void initLayout() {
-        setSizeFull();
-
-        final VerticalLayout layout = new VerticalLayout();
+        layout.addComponents(textField, button);
         layout.setMargin(true);
         layout.setSpacing(true);
+
         setContent(layout);
+        setSizeFull();
 
-        final TextField textField = new TextField("Enter name: ");
-        layout.addComponent(textField);
+        button.addClickListener(this);
+    }
 
-        Button button = new Button("Call Server");
-        button.addClickListener(new Button.ClickListener() {
-            @Override
-            public void buttonClick(Button.ClickEvent event) {
-                String name = textField.getValue();
-                String message = getMessage(name);
-                layout.addComponent(new Label(message));
-            }
-        });
-        layout.addComponent(button);
+    @Override
+    public void buttonClick(Button.ClickEvent event) {
+        String name = textField.getValue();
+        String message = getMessage(name);
+        layout.addComponent(new Label(message));
     }
 
     private String getMessage(String name) {
