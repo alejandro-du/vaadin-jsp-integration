@@ -2,16 +2,16 @@
 <!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
         "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
 <taglib>
-    <tlib-version>2.2.3</tlib-version>
-    <jsp-version>1.2</jsp-version>
+    <tlib-version>1.0</tlib-version>
+    <jsp-version>2.0</jsp-version>
     <short-name>vaadin</short-name>
     <uri>/vaadin</uri>
     <display-name>"Vaadin Tags"</display-name>
 
     <tag>
         <name>ui</name>
-        <tag-class>org.vaadin.struts2.VaadinTag</tag-class>
-        <body-content>JSP</body-content>
+        <tag-class>org.vaadin.jsp.VaadinTagHandler</tag-class>
+        <body-content>empty</body-content>
         <description>Renders a Vaadin UI</description>
 
         <attribute>
@@ -30,6 +30,13 @@
 
         <attribute>
             <name>widgetset</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <description>Widgetset name</description>
+        </attribute>
+
+        <attribute>
+            <name>vaadindir</name>
             <required>false</required>
             <rtexprvalue>false</rtexprvalue>
             <description>Widgetset name</description>

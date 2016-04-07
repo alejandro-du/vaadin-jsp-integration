@@ -4,9 +4,8 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
-    <artifactId>struts2-integration-demo</artifactId>
+    <artifactId>appfuse-vaadin-example</artifactId>
     <packaging>war</packaging>
-    <version>1.0-SNAPSHOT</version>
 
     <parent>
         <groupId>org.appfuse</groupId>
@@ -118,8 +117,8 @@
         </dependency>
         <dependency>
             <groupId>org.vaadin</groupId>
-            <artifactId>struts2-integration</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <artifactId>jsp-integration</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 
@@ -129,7 +128,7 @@
         <amp.genericCore>true</amp.genericCore>
         <amp.fullSource>false</amp.fullSource>
         <dao.framework>hibernate</dao.framework>
-        <db.name>struts2_integration_demo</db.name>
+        <db.name>appfuse_example_db</db.name>
         <web.framework>struts</web.framework>
 
         <!-- Framework/Plugin versions -->
@@ -142,7 +141,7 @@
         <jdbc.driverClassName>org.h2.Driver</jdbc.driverClassName>
         <jdbc.groupId>com.h2database</jdbc.groupId>
         <jdbc.password/>
-        <jdbc.url>jdbc:h2:/tmp/struts2_integration_demo;MULTI_THREADED=1</jdbc.url>
+        <jdbc.url>jdbc:h2:/tmp/appfuse_example_db;MULTI_THREADED=1</jdbc.url>
         <jdbc.username>sa</jdbc.username>
         <jdbc.validationQuery>SELECT 1 + 1</jdbc.validationQuery>
         <jdbc.version>1.4.182</jdbc.version>

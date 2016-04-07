@@ -65,6 +65,7 @@
     <!-- Struts -->
     <rule match-type="regex">
         <!-- ignore Vaadin UI -->
+        <!-- TODO move as a separate rule -->
         <condition type="request-uri" operator="notequal">/myui</condition>
         <from>^([^?]*)/([^?/\.]+)(\?.*)?$</from>
         <to last="true">$1/$2.action$3</to>

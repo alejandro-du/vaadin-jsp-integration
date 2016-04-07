@@ -1,5 +1,5 @@
-# Struts2 Integration Add-on for Vaadin 7
-Struts2 Integration is a Vaadin 7 add-on that allows you to render Vaadin UIs in JSP-based Struts2 applications.
+# JSP Integration Add-on for Vaadin 7
+JSP Integration is a Vaadin 7 add-on that allows you to render Vaadin UIs in JSP pages.
 
 ## Usage
 Add the tag library and use the `ui` tag to point to the URL mapped to the `VaadinServlet` serving your UI:
@@ -11,7 +11,7 @@ Add the tag library and use the `ui` tag to point to the URL mapped to the `Vaad
 
 You can optionally specify a custom widgetset and a theme:
 ````jsp
-<vaadin:ui url="/myui" widgetset="com.example.webapp.vaadin.MyUiWidgetset" theme="mytheme"/>
+<vaadin:ui url="/myui" widgetset="com.example.MyUiWidgetset" theme="mytheme"/>
 ```
 
 ## Licence

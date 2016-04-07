@@ -1,22 +1,21 @@
-package org.vaadin.struts2;
+package org.vaadin.jsp;
 
-import com.opensymphony.xwork2.util.ValueStack;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.shared.Version;
-import org.apache.struts2.ServletActionContext;
-import org.apache.struts2.components.Component;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.jsp.PageContext;
+import javax.servlet.jsp.tagext.SimpleTagSupport;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.Writer;
 import java.util.Scanner;
 
 /**
- * Struts2 Component implementation that renders the HTML required to visualize a Vaadin UI.
+ * JSP tag handler implementation that constructs the HTML required to render a Vaadin UI.
  *
  * @author Alejandro Duarte
  */
-public class VaadinComponent extends Component {
+public class VaadinTagHandler extends SimpleTagSupport {
 
     public static final String TEMPLATE_FILE_NAME = "template.html";
 
@@ -26,17 +25,14 @@ public class VaadinComponent extends Component {
 
     private String widgetset;
 
-    public VaadinComponent(ValueStack stack) {
-        super(stack);
-    }
+    private String vaadindir;
 
     @Override
-    public boolean start(Writer writer) {
+    public void doTag() {
         try {
             String template = getTemplate();
             String html = setVariables(template);
-            writer.write(html);
-            return true;
+            getJspContext().getOut().write(html);
 
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -59,16 +55,19 @@ public class VaadinComponent extends Component {
     }
 
     private String setVariables(String template) {
+        PageContext pageContext = (PageContext) getJspContext();
+        HttpServletRequest request = (HttpServletRequest) pageContext.getRequest();
+
         String divId = url.substring(1).replaceAll("/", "-");
         String vaadinVersion = Version.getFullVersion();
-        String context = ServletActionContext.getRequest().getContextPath();
+        String context = request.getContextPath();
 
         return template
                 .replace("${divId}", divId)
-                .replace("${theme}", theme == null ? VaadinServlet.DEFAULT_THEME_NAME : theme)
+                .replace("${theme}", theme != null ? theme : "valo")
                 .replace("${vaadinVersion}", vaadinVersion)
-                .replace("${widgetset}", widgetset == null ? VaadinServlet.DEFAULT_WIDGETSET : widgetset)
-                .replace("${vaadinDir}", context + "/VAADIN/")
+                .replace("${widgetset}", widgetset != null ? widgetset : VaadinServlet.DEFAULT_WIDGETSET)
+                .replace("${vaadinDir}", vaadindir != null ? vaadindir : context + "/VAADIN/")
                 .replace("${browserDetailsUrl}", context + url)
                 .replace("${serviceUrl}", context + url);
     }
@@ -83,6 +82,10 @@ public class VaadinComponent extends Component {
 
     public void setWidgetset(String widgetset) {
         this.widgetset = widgetset;
+    }
+
+    public void setVaadindir(String vaadindir) {
+        this.vaadindir = vaadindir;
     }
 
 }

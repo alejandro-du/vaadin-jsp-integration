@@ -3,14 +3,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.vaadin</groupId>
-    <artifactId>struts2-integration-root</artifactId>
+    <artifactId>jsp-integration-root</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
     <modules>
-        <module>struts2-integration-addon</module>
-        <module>struts2-integration-demo</module>
-        <module>struts2-integration-demo2</module>
+        <module>jsp-integration-addon</module>
+        <module>struts2-vaadin-example</module>
+        <module>appfuse-vaadin-example</module>
     </modules>
 
 </project>
