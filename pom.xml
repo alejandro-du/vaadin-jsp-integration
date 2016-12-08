@@ -5,7 +5,7 @@
     <groupId>org.vaadin</groupId>
     <artifactId>jsp-integration-root</artifactId>
     <packaging>pom</packaging>
-    <version>1.1</version>
+    <version>1.2</version>
 
     <modules>
         <module>jsp-integration-addon</module>
