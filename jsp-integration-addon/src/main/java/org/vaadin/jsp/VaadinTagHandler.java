@@ -27,7 +27,7 @@ public class VaadinTagHandler extends SimpleTagSupport {
 
     private String vaadindir;
 
-    private boolean debug = false;
+    private boolean debug = true;
 
     @Override
     public void doTag() {
@@ -72,7 +72,7 @@ public class VaadinTagHandler extends SimpleTagSupport {
                 .replace("${vaadinDir}", vaadindir != null ? vaadindir : context + "/VAADIN/")
                 .replace("${browserDetailsUrl}", context + url)
                 .replace("${serviceUrl}", context + url)
-				        .replace("${debugMode}", debug? "true":"false");
+				        .replace("${debugMode}", String.valueOf(debug));
     }
 
     public void setUrl(String url) {
@@ -91,8 +91,8 @@ public class VaadinTagHandler extends SimpleTagSupport {
         this.vaadindir = vaadindir;
     }
 
-    public void setDebug(String debug) {
-    	this.debug = "true".equals(debug);
+    public void setDebug(boolean debug) {
+    	this.debug = debug;
     }
 
 }
