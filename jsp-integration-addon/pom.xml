@@ -5,7 +5,7 @@
     <groupId>org.vaadin</groupId>
     <artifactId>jsp-integration</artifactId>
     <packaging>jar</packaging>
-    <version>1.1</version>
+    <version>1.2</version>
     <name>JSP Integration</name>
 
     <properties>

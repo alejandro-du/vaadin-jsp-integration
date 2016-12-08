@@ -41,5 +41,13 @@
             <rtexprvalue>false</rtexprvalue>
             <description>Widgetset name</description>
         </attribute>
+
+        <attribute>
+            <name>debug</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <type>boolean</type>
+            <description>Enable debuging: boolean, default:true</description>
+        </attribute>
     </tag>
 </taglib>
