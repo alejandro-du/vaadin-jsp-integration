@@ -1,5 +1,5 @@
-[![Published on vaadin.com/directory](https://img.shields.io/vaadin-directory/status/jsp-integration.svg)](https://img.shields.io/vaadin-directory/status/jsp-integration.svg)
-[![Stars on vaadin.com/directory](https://img.shields.io/vaadin-directory/star/jsp-integration.svg)](https://img.shields.io/vaadin-directory/star/jsp-integration.svg)
+[![Published on Vaadin  Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg)](https://vaadin.com/directory/component/jsp-integration)
+[![Stars on Vaadin Directory](https://img.shields.io/vaadin-directory/star/jsp-integration.svg)](https://vaadin.com/directory/component/jsp-integration)
 [![Latest version on vaadin.com/directory](https://img.shields.io/vaadin-directory/v/jsp-integration.svg)](https://img.shields.io/vaadin-directory/v/jsp-integration.svg)
 
 # JSP Integration Add-on for Vaadin 7
